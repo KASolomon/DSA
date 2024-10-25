@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class DynamicArray {
    private int[] array;
    private int occupied;
@@ -10,7 +8,9 @@ public class DynamicArray {
 
     }
     public void print(){
-        System.out.println(Arrays.toString(this.array));
+    for(int i =0; i <this.occupied; i++){
+        System.out.println(this.array[i]);
+    }
     }
     public void insert(int element){
         if(this.occupied == this.array.length){

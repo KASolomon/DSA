@@ -7,7 +7,7 @@ public class Main {
         DynamicArray test = new DynamicArray(3);
 //        test.insert(99);
 //        test.insert(98);
-//        test.removeAt(0);
+        test.removeAt(-1);
         int index = test.indexOf(98);
         System.out.println(index);
         test.print();

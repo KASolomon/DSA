@@ -26,6 +26,9 @@ public class DynamicArray {
     }
 
     public void removeAt(int index){
+        if (index < 0 || index >= this.occupied){
+            throw new IllegalArgumentException("Supply a valid index for the deletion");
+        }
         for(int i=index; i<=this.occupied-1; i++){
             this.array[i] = this.array[i+1];
         }

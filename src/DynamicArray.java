@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class DynamicArray {
    private int[] array;
    private int occupied;
@@ -52,5 +54,20 @@ public class DynamicArray {
             }
         }
         return maximum;
+    }
+
+    public ArrayList<Integer> intersect(int [] sampleArray){
+        ArrayList<Integer> solutionArray  = new ArrayList<>(1);
+        for (int dynamicArrayIndex =0; dynamicArrayIndex < this.occupied; dynamicArrayIndex++){
+            int dynamicElement = this.array[dynamicArrayIndex];
+            for (int sampleArrayIndex = 0; sampleArrayIndex < sampleArray.length; sampleArrayIndex++ ){
+                if(sampleArray[sampleArrayIndex] == dynamicElement){
+                    if(!solutionArray.contains(dynamicElement)){
+                        solutionArray.add(dynamicElement);
+                    }
+                }
+            }
+        }
+        return solutionArray;
     }
 }

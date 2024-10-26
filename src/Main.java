@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -9,8 +11,8 @@ public class Main {
 
         test.insert(98);
         test.insert(101);
-
-        System.out.println(test.max());
+ArrayList<Integer> duplicates = test.intersect(new int[]{99, 98, 2, 101, 3, 4});
+        System.out.println(duplicates);
 
     }
 }

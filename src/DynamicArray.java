@@ -70,4 +70,13 @@ public class DynamicArray {
         }
         return solutionArray;
     }
+
+    public int[] reverse(){
+        ArrayList<Integer> reversed = new ArrayList<>();
+        for (int i =this.array.length-1; i >= 0; i--){
+            reversed.add(this.array[i]);
+        }
+        this.array = reversed.stream().mapToInt(Integer::intValue).toArray();
+    return this.array;
+    }
 }

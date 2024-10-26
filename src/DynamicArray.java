@@ -43,4 +43,14 @@ public class DynamicArray {
         }
         return -1;
     }
+
+    public int max(){
+        int maximum = 0;
+        for(int i =0; i < this.occupied; i++){
+            if(this.array[i]> maximum){
+                maximum = this.array[i];
+            }
+        }
+        return maximum;
+    }
 }

@@ -3,11 +3,14 @@
 public class Main {
     public static void main(String[] args) {
         DynamicArray test = new DynamicArray(3);
-//        test.insert(99);
-//        test.insert(98);
-        test.removeAt(-1);
-        int index = test.indexOf(98);
-        System.out.println(index);
-        test.print();
+        test.insert(99);
+        test.insert(98);
+        test.insert(98);
+
+        test.insert(98);
+        test.insert(101);
+
+        System.out.println(test.max());
+
     }
 }

@@ -16,17 +16,19 @@ public class DynamicArray {
     }
     public void insert(int element){
         if(this.occupied == this.array.length){
-            int [] cloned = this.array.clone();
-            this.array = new int[this.array.length * 2];
-            for(int i =0; i<= cloned.length-1;i++){
-                this.array[i] = cloned[i];
-            }
+            this.expand();
             this.array[this.occupied++] = element;
             return;
         }
         this.array[this.occupied++] = element;
     }
-
+    private void expand(){
+        int [] cloned = this.array.clone();
+        this.array = new int[this.array.length * 2];
+        for(int i =0; i<= cloned.length-1;i++){
+            this.array[i] = cloned[i];
+        }
+    }
     public void removeAt(int index){
         if (index < 0 || index >= this.occupied){
             throw new IllegalArgumentException("Supply a valid index for the deletion");
@@ -78,5 +80,16 @@ public class DynamicArray {
         }
         this.array = reversed.stream().mapToInt(Integer::intValue).toArray();
     return this.array;
+    }
+    public void insertAt(int index, int value){
+        if(this.occupied == this.array.length){
+            this.expand();
+        }
+        for(int i=this.occupied; i> index; i++){
+                this.array[i] = this.array[i-1];
+        }
+        this.array[index] = value;
+        this.occupied++;
+        this.print();
     }
 }
